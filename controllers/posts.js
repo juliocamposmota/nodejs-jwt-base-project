@@ -17,6 +17,7 @@ const mockPosts = [
   },
 ];
 
-module.exports = (_req, res) => {
+module.exports = (req, res) => {
+  console.log(req.user);
   res.status(200).json({ mockPosts });
 };
