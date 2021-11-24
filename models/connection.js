@@ -1,6 +1,6 @@
 const { MongoClient } = require('mongodb');
 
-const MONGO_DB_URL = 'mongodb://localhost:27017'; // ou coloque sua URL do MongoDB aqui
+const MONGO_DB_URL = 'mongodb://127.0.0.1:27017'; // ou coloque sua URL do MongoDB aqui
 
 let schema = null;
 
