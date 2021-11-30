@@ -1,5 +1,6 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
+const server = require('../src/api/app');
 
 chai.use(chaiHttp);
 
@@ -8,6 +9,15 @@ const { expect } = chai;
 describe('POST /api/users', () => {
   describe('quando é criado com sucesso', () => {
     let response = {};
+
+    before(async () => {
+      response = await chai.request(server)
+        .post('/api/users')
+        .send({
+          username: 'Jane',
+          password: 'senha123',
+        });
+    });
 
     it('retorna o código de status 201', () => {
       expect(response).to.have.status(201);
